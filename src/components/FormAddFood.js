@@ -10,6 +10,11 @@ class FormAddFood extends Component {
     }
   }
 
+  handleChange(event){
+    let { name, value } = event.target;
+    this.setState({[name]: value})
+  }
+
   render() {
     return (
       <div>
