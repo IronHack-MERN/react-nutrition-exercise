@@ -11,19 +11,6 @@ class App extends Component {
     foods: food.slice(0,3),
   };
 
-  xx = (food) => {
-    const oneFoods = {
-      name: "Papa rellena",
-      calories: 550,
-      image: "https://i.imgur.com/DupGBz5.jpg",
-      quantity: 2,
-    };
-    console.log("adding new food");
-    this.setState({
-      foods: [...this.state.foods, oneFoods]
-    });
-  };
-
   addRandomFood = () => {
     const randomFood = food[Math.floor(Math.random() * food.length)];
     console.log('i add: ', randomFood)
