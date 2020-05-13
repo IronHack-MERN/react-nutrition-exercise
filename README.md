@@ -4,11 +4,12 @@
 ## Description
 Exercise with React.js showing a SPA with dynamic components and using 'Bulma' framework.
 
-## Scripts
 
+## Scripts
 In the project directory, you can run:
-### $ `npm install`
-### $ `npm start`
+#### $ `npm install`
+#### $ `npm start`
+
 
 ## Technology Stack
 - React.js
@@ -18,11 +19,26 @@ In the project directory, you can run:
 - Css
 - Surge.sh
 
+
+### Bulma installation
+[Bulma](https://bulma.io/) for the design
+
+```sh
+$ npm install bulma --save
+```
+
+
+### Bulma import
+```javascript
+import 'bulma/css/bulma.css';
+```
+
+
 ## Git repo
 The url to repository and deployed project:
-
 - [Repository Frontend Link](https://github.com/elenapiaggio/react-nutrition-exercise)
 - [Deploy Link](https://react-bulma-nutrition.surge.sh)
+
 
 Made with :heart: by Elena
 
