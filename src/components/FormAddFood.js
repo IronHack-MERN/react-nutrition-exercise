@@ -6,9 +6,21 @@ class FormAddFood extends Component {
     this.state = {
       name: '',
       kcal: '',
-      url: ''
+      url: '',
+      showForm: false,
     }
   }
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    this.props.addNewFood(this.state);
+    this.setState({
+      name: 'xx',
+      kcal: 'xx',
+      url: 'xx',
+      showForm: false,
+    })
+  };
 
   handleChange(event){
     let { name, value } = event.target;
@@ -20,15 +32,15 @@ class FormAddFood extends Component {
       <div>
         <form onSubmit={this.handleFormSubmit}>
           <label>Name:</label>
-          <input type='text' value={this.state.name} onChange={e => this.handleChange(e)}/>
+          <input type='text' name='name' value={this.state.name} onChange={e => this.handleChange(e)}/>
 
           <label>Kc@l:</label>
-          <input type='number' value={this.state.number} onChange={e => this.handleChange(e)}/>
+          <input type='text' name='kcal' value={this.state.kcal} onChange={e => this.handleChange(e)}/>
 
           <label>URL:</label>
-          <input type='text' value={this.state.url} onChange={e => this.handleChange(e)}/>
+          <input type='text' name='url' placeholder="https://example.com" value={this.state.url} onChange={e => this.handleChange(e)}/>
 
-          <input type="submit" value="Submit" />
+          <input type="submit" value="ADD" />
         </form>
       </div>
     );
