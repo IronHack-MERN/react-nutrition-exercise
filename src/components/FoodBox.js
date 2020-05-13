@@ -1,18 +1,19 @@
 import React from "react";
-const FoodBox = () => {
+
+const FoodBox = ( {name, calories, image, quantity}) => {
   return (
     <div className="box">
       <article className="media">
         <div className="media-left">
           <figure className="image is-64x64">
-            <img src="https://i.imgur.com/eTmWoAN.png" alt='img-pizza'/>
+            <img src={image} alt='img-pizza'/>
           </figure>
         </div>
         <div className="media-content">
           <div className="content">
             <p>
-              <strong>Pizza</strong> <br />
-              <small>400 cal</small>
+              <strong>{name}</strong> <br />
+              <small>{calories} kcal</small>
             </p>
           </div>
         </div>
