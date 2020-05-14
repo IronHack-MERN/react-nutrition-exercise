@@ -37,8 +37,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>NutritApp</h1>
-        <Button myProp={this.addRandomFood.bind(this.state, food)}>
+        <h1 className="title is-1">NutritApp</h1>
+        <Button
+          myProp={this.addRandomFood.bind(this.state, food)}
+        >
           Add new random Food
         </Button>
 
@@ -47,16 +49,25 @@ class App extends Component {
         ) : (
           <Button myProp={this.showForm}>Add personal food</Button>
         )}
+        <div className="columns">
+          <div className="column">
+            {this.state.foods.map((food, index) => {
+              return (
+                <section key={index}>
+                  <FoodBox {...food} />
+                </section>
+              );
+            })}
+          </div>
 
-        <div>
-          {this.state.foods.map((food, index) => {
-            return (
-              <section key={index}>
-                <FoodBox {...food} />
-              </section>
-            );
-          })}
+          <div className="column">
+            <h2 className="title">ToDay Food</h2>
+            <ul>hola que ase</ul>
+            <p>Total of Calories </p>
+          </div>
         </div>
+
+      
       </div>
     );
   }
