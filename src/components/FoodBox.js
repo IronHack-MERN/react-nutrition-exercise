@@ -1,6 +1,6 @@
 import React from "react";
 
-const FoodBox = ({ name, calories, image, quantity }) => {
+const FoodBox = ({ name, calories, image, quantity, provaFunction }) => {
   return (
       <div className="box">
         <article className="media">
@@ -20,7 +20,7 @@ const FoodBox = ({ name, calories, image, quantity }) => {
           <div className="media-right">
             <div className="field has-addons">
               <div className="control">
-                <input className="input" type="number" value="1" />
+                <input className="input" type="number" value="1" onChange={provaFunction}/>
               </div>
               <div className="control">
                 <button className="button is-info">+</button>

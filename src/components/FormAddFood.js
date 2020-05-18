@@ -5,8 +5,8 @@ class FormAddFood extends Component {
     super(props);
     this.state = {
       name: "",
-      kcal: "",
-      url: "",
+      calories: "",
+      image: "",
       showForm: false,
     };
   }

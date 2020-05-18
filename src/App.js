@@ -5,10 +5,11 @@ import food from "./data/foods.json";
 import FoodBox from "./components/FoodBox";
 import Button from "./components/Button";
 import FormAddFood from "./components/FormAddFood";
+import SearchBar from './components/SearchBar';
 
 class App extends Component {
   state = {
-    foods: food.slice(0, 3),
+    foods: food,
     showForm: false,
   };
 
@@ -34,6 +35,20 @@ class App extends Component {
     });
   };
 
+  provaFunction = () => {
+    console.log('prova function');
+  } 
+
+  filterFood = (foodFilter) => {
+    const foodFiltered = food.filter( 
+      food => food.name.toLowerCase().includes(foodFilter)
+    )
+    
+    this.setState({
+      foods: foodFiltered,
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -49,12 +64,22 @@ class App extends Component {
         ) : (
           <Button myProp={this.showForm}>Add personal food</Button>
         )}
+
+        <div>
+          <SearchBar
+            filterFood={this.filterFood.bind(this.state)}
+          />
+        </div>
         <div className="columns">
+        
           <div className="column">
             {this.state.foods.map((food, index) => {
               return (
                 <section key={index}>
-                  <FoodBox {...food} />
+                  <FoodBox 
+                    {...food}
+                    provaFunction = {this.provaFunction}
+                   />
                 </section>
               );
             })}
